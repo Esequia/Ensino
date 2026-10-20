@@ -1,10 +1,16 @@
 \documentclass[10pt,a4paper]{article}%
 \usepackage{amsmath,amsfonts,amstext,amsthm}%
-\usepackage{graphicx}%
+%\usepackage{pstricks,pst-plot}%
+\usepackage[dvips]{graphicx}%
 %\usepackage[brazil]{babel}%
-\usepackage[utf8]{inputenc}%
+\usepackage[latin1]{inputenc}%
  \usepackage{tabu}
 \pagestyle{empty}%
+\usepackage{pstricks,pst-plot}
+\usepackage[dvips]{graphicx}%
+\usepackage{pst-math}
+\usepackage{pst-plot}
+\usepackage{pst-circ}
 \setlength{\topmargin}{-2.5cm} \setlength{\oddsidemargin}{-1cm} %%% top margin -3
 \setlength{\evensidemargin}{1cm} \setlength{\textheight}{27cm}
 \setlength{\textwidth}{18cm}
@@ -19,15 +25,15 @@
 \noindent
 \begin{minipage}[l]{11.3cm}
 
-    %{\bf UFRGS -- Instituto de Matem√°tica e Estat√≠stica}
+    %{\bf UFRGS -- Instituto de Matem·tica e EstatÌstica}
 
-     {\bf UFRGS -- INSTITUTO DE MATEM√ÅTICA  E ESTAT√çSTICA}
+     {\bf UFRGS -- INSTITUTO DE MATEM¡TICA  E ESTATÕSTICA}
 
-    {\bf Departamento de Matem√°tica Pura e Aplicada}
+    {\bf Departamento de Matem·tica Pura e Aplicada}
   
    {\bf MAT01168 - Turma A1 - 2026/2 }
 
-    {\bf Prova da √°rea IIA}
+    {\bf Prova da ·rea IIA}
 \end{minipage}\hfill\begin{minipage}{8.0cm}
     \begin{tabular}{|c|c|c|c|c|}  \hline
         {\bf 1 }&{\bf 2}&{\bf 3}&{\bf 4}&    {\bf Total}\!\! \\
@@ -44,26 +50,26 @@
 
 \linespread{1.0}
 
-\vspace{0.2cm} {\normalsize \noindent {\bf Nome:} \underline
-{\hspace{11.9cm}} {\bf Cart√£o:} \underline {\hspace{3.1cm}}}
-\vspace{0.2cm} 
+\vspace{0,2cm} {\normalsize \noindent {\bf Nome:} \underline
+{\hspace{11.9cm}} {\bf Cart„o:} \underline {\hspace{3.1cm}} 
+\vspace{0,2cm} 
 \large
-%%%%%%%%%%%%%%% quest√£o 1
+%%%%%%%%%%%%%%% quest„o 1
 \vspace{.5cm}
 \noindent\begin{minipage}[l]{11cm}
 {\footnotesize 
 Regras Gerais:
 \begin{itemize}
-\item N√£o √© permitido o uso de calculadoras, telefones ou qualquer outro recurso computacional ou de comunica√ß√£o.
-\item Trabalhe individualmente e sem uso de material de consulta al√©m do fornecido.
-\item Devolva o caderno de quest√µes preenchido ao final da prova.
+\item N„o È permitido o uso de calculadoras, telefones ou qualquer outro recurso computacional ou de comunicaÁ„o.
+\item Trabalhe individualmente e sem uso de material de consulta alÈm do fornecido.
+\item Devolva o caderno de questıes preenchido ao final da prova.
 \end{itemize}
-Regras para as quest√µes abertas:
+Regras para as questıes abertas:
 \begin{itemize}
 \item Seja sucinto, completo e claro.
 \item Justifique todo procedimento usado. 
-\item Indique identidades matem√°ticas usadas, em especial, itens da tabela.
-\item Use nota√ß√£o matem√°tica consistente.
+\item Indique identidades matem·ticas usadas, em especial, itens da tabela.
+\item Use notaÁ„o matem·tica consistente.
 \end{itemize}
 \vspace{5pt}
 }
@@ -78,7 +84,7 @@ Identidades:
 \hline
  $\sinh(x)=\frac{e^{x}-e^{-x}}{2}$ & $\cosh(x)=\frac{e^{x}+e^{-x}}{2}$\\ 
 \hline
-\multicolumn{2}{|c|}{$(a+b)^n=\sum_{j=0}^n { n\choose j} a^{n-j}b^j, \quad {n\choose j}=\frac{n!}{j!(n-j)!}$}\\ 
+\multicolumn{2}{|c|}{$(a+b)^n=\sum_{j=0}^\infty { n\choose j} a^{n-j}b^j, \quad {n\choose j}=\frac{n!}{j!(n-j)!}$}\\ 
 \hline
  \multicolumn{2}{|c|}{$\sin(x+y)=\sin(x)\cos(y)+\sin(y)\cos(x)$}\\
  \hline
@@ -111,9 +117,9 @@ Identidades:
 \hline
 7& \begin{tabu}{c}Transformada da \\Delta de Dirac \end{tabu}&$\displaystyle \mathcal{L}\left\{\delta(t-a)\right\}=e^{-as} $ \\ 
 \hline
-8& \begin{tabu}{c}Teorema da \\Convolu√ß√£o \end{tabu}&\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{(f*g)(t)\right\}=F(s)G(s), $ \\onde \quad $\displaystyle (f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau $\end{tabu} \\ 
+8& \begin{tabu}{c}Teorema da \\ConvoluÁ„o \end{tabu}&\begin{tabu}{l}$\displaystyle \mathcal{L}\left\{(f*g)(t)\right\}=F(s)G(s), $ \\onde \quad $\displaystyle (f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau $\end{tabu} \\ 
 \hline
-9& \begin{tabu}{c}Transformada de \\fun√ß√µes peri√≥dicas\end{tabu}&$\displaystyle \mathcal{L}\left\{f(t)\right\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-s\tau}f(\tau)d\tau $ \\ 
+9& \begin{tabu}{c}Transformada de \\funÁıes periÛdicas\end{tabu}&$\displaystyle \mathcal{L}\left\{f(t)\right\}=\frac{1}{1-e^{-sT}}\int_0^Te^{-s\tau}f(\tau)d\tau $ \\ 
 \hline
 10& \begin{tabu}{c}Derivada da \\transformada \end{tabu}&$\displaystyle \mathcal{L}\left\{tf(t)\right\}=-\frac{dF(s)}{ds} $ \\ 
 \hline
@@ -160,13 +166,13 @@ Identidades:
 {\tabulinesep=1.2mm
 \begin{tabu}{|c|c|} 
 \hline
-Fun√ß√£o Gamma& $\displaystyle \Gamma(k)=\int_0^\infty x^{k-1}e^{-x}dx$ \\ 
+FunÁ„o Gamma& $\displaystyle \Gamma(k)=\int_0^\infty x^{k-1}e^{-x}dx$ \\ 
 \hline
-\begin{tabular}{c}Propriedade da \\ Fun√ß√£o Gamma\end{tabular}& $\displaystyle \begin{array}{ll}\Gamma(k+1)=k\Gamma(k),&k>0\\\Gamma(n+1)=n!,&n\in\mathbb{N}\end{array}$ \\ 
+\begin{tabular}{c}Propriedade da \\ FunÁ„o Gamma\end{tabular}& $\displaystyle \begin{array}{ll}\Gamma(k+1)=k\Gamma(k),&k>0\\\Gamma(n+1)=n!,&n\in\mathbb{N}\end{array}$ \\ 
 \hline
-\begin{tabular}{c}Fun√ß√£o de Bessel\\modificada de ordem $\nu$\end{tabular}&\ \ $\displaystyle I_\nu(x)=\sum_{m=0}^\infty \frac{1}{m!\Gamma(m+\nu+1)}\left(\frac{x}{2}\right)^{2m+\nu}$ \\ 
+\begin{tabular}{c}FunÁ„o de Bessel\\modificada de ordem $\nu$\end{tabular}&\ \ $\displaystyle I_\nu(x)=\sum_{m=0}^\infty \frac{1}{m!\Gamma(m+\nu+1)}\left(\frac{x}{2}\right)^{2m+\nu}$ \\ 
 \hline
-\begin{tabular}{c}Fun√ß√£o de Bessel\\de ordem $0$\end{tabular}&\ \ $\displaystyle J_0(x)=\sum_{m=0}^\infty \frac{(-1)^m}{m!^2}\left(\frac{x}{2}\right)^{2m}$ \\ 
+\begin{tabular}{c}FunÁ„o de Bessel\\de ordem $0$\end{tabular}&\ \ $\displaystyle J_0(x)=\sum_{m=0}^\infty \frac{(-1)^m}{m!^2}\left(\frac{x}{2}\right)^{2m}$ \\ 
 \hline
 \begin{tabular}{c}Integral seno\end{tabular}&\ \ $\displaystyle 	\hbox{Si}\ \!(t)=\int_0^t\frac{\sin(x)}{x}dx$ \\ 
 \hline
@@ -186,8 +192,8 @@ $\int xe^{\lambda x}\; \mathrm{d}x = \frac{e^{ \lambda x}}{\lambda^2}(\lambda x-
  $\int \!x\sin \left( \lambda\,x \right) {dx}={\frac {\sin \left( 
 \lambda\,x \right) -\lambda x\cos \left( \lambda\,x \right) }{{\lambda}
 ^{2}}}+C$\\\hline
- $\int \!e^{\lambda x}\sin \left( w\,x \right) {dx}={\frac {{{\rm e}^{\lambda\,x}} \left( \lambda\,\sin \left( wx \right) 
--w\cos \left( wx \right)  \right) }{{\lambda}^{2}+{w}^{2}}}+C
+ $\int \!e^{\lambda x}\sin \left( w\,x \right) {dx}={\frac {{{\rm e}^{\lambda\,x}} \left( \lambda\,\cos \left( wx \right) 
++w\sin \left( wx \right)  \right) }{{\lambda}^{2}+{w}^{2}}}
 $
  \\\hline
 \end{tabu}}
@@ -257,7 +263,7 @@ Tabela de transformadas de Laplace:
 \hline
 25& $\displaystyle \frac{1}{(s^4+4a^4)}$&\begin{tabu}{r}$\displaystyle  \frac{1}{4a^3}[\sin(at)\cosh(at)-$\\$\displaystyle  -\cos(at)\sinh(at)]$\end{tabu} \\ 
 \hline
-26& $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sin(at)\sinh(at)$ \\ 
+26& $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sin(at)\sinh(at))$ \\ 
 \hline
 27& $\displaystyle \frac{1}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^3}(\sinh(at)-\sin(at))$ \\ 
 \hline
@@ -291,7 +297,7 @@ Tabela de transformadas de Laplace:
 \hline
 35& $\displaystyle \frac{1}{\sqrt{s}}e^{-\frac{k}{s}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}\cos(2\sqrt{k t})$ \\ 
 \hline
-36& $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}},\quad (k>0)\frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\sinh(2\sqrt{k t})$\displaystyle  \frac{1}{\sqrt{\pi k}}\sinh(2\sqrt{k t})$ \\ 
+36& $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\sinh(2\sqrt{k t})$ \\ 
 \hline
 37& $\displaystyle e^{-k\sqrt{s}},\qquad (k>0) $&$\displaystyle  \frac{k}{2\sqrt{\pi t^3}}e^{-\frac{k^2}{4t}}$ \\ 
 \hline
@@ -326,30 +332,30 @@ Tabela de transformadas de Laplace:
 \newpage
 
 
-\noindent $\bullet$ {\bf Quest√£o 1} (3.0 pontos)
-A temperatura de um forno industrial √© descrita pelo modelo
+\noindent $\bullet$ {\bf Quest„o 1} (3.0 pontos)
+A temperatura de um forno industrial È descrita pelo modelo
 \[
 T'(t)=-4\bigl(T(t)-20\bigr)+q(t),
 \]
-onde $T(t)$ √© a temperatura do forno, em graus Celsius, e $q(t)$ representa a pot√™ncia de aquecimento, em unidades normalizadas.
-Para que a temperatura se aproxime de $180\,{}^\circ\mathrm{C}$, um controlador ajusta a pot√™ncia segundo a equa√ß√£o
+onde $T(t)$ È a temperatura do forno, em graus Celsius, e $q(t)$ representa a potÍncia de aquecimento, em unidades normalizadas.
+Para que a temperatura se aproxime de $180\,{}^\circ\mathrm{C}$, um controlador ajusta a potÍncia segundo a equaÁ„o
 \[
 q'(t)=\eta\bigl(180-T(t)\bigr),
 \]
-onde $\eta>0$ √© uma constante de controle. Inicialmente, $T(0)=20$ e $q(0)=0$.
+onde $\eta>0$ È uma constante de controle. Inicialmente, $T(0)=20$ e $q(0)=0$.
 Usando a transformada de Laplace, responda:
 \begin{itemize}
-\item[a)] (1.0 ponto) Obtenha o sistema alg√©brico satisfeito por $\widehat T(s)=\mathcal{L}\{T(t)\}$ e $Q(s)=\mathcal{L}\{q(t)\}$ e encontre uma express√£o para $\widehat T(s)$ em fun√ß√£o de $\eta$.
+\item[a)] (1.0 ponto) Obtenha o sistema algÈbrico satisfeito por $\widehat T(s)=\mathcal{L}\{T(t)\}$ e $Q(s)=\mathcal{L}\{q(t)\}$ e encontre uma express„o para $\widehat T(s)$ em funÁ„o de $\eta$.
 \item[b)] (0.5 ponto) Determine $\eta$ para que o sistema seja criticamente amortecido.
 \item[c)] (1.0 ponto) Para o valor de $\eta$ encontrado, determine $T(t)$.
-\item[d)] (0.5 ponto) Determine $\lim_{t\to\infty}T(t)$ e $\lim_{t\to\infty}q(t)$. Explique por que a pot√™ncia n√£o tende a zero quando a temperatura se aproxima do valor de ajuste.
+\item[d)] (0.5 ponto) Determine $\lim_{t\to\infty}T(t)$ e $\lim_{t\to\infty}q(t)$. Explique por que a potÍncia n„o tende a zero quando a temperatura se aproxima do valor de ajuste.
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Quest√£o 2} (2.5 pontos)
-Um oscilador harm√¥nico amortecido consiste em uma massa de $1\,\mathrm{kg}$ presa a uma mola de constante el√°stica $5\,\mathrm{N/m}$, com coeficiente de amortecimento $2\,\mathrm{N\,s/m}$.
-A massa est√° inicialmente em repouso na posi√ß√£o de equil√≠brio. Uma for√ßa constante de $1\,\mathrm{N}$ √© aplicada no instante $t=1\,\mathrm{s}$ e retirada no instante $t=3\,\mathrm{s}$.
-O deslocamento $x(t)$ em rela√ß√£o ao equil√≠brio √© descrito por
+\noindent $\bullet$ {\bf Quest„o 2} (2.5 pontos)
+Um oscilador harmÙnico amortecido consiste em uma massa de $1\,\mathrm{kg}$ presa a uma mola de constante el·stica $5\,\mathrm{N/m}$, com coeficiente de amortecimento $2\,\mathrm{N\,s/m}$.
+A massa est· inicialmente em repouso na posiÁ„o de equilÌbrio. Uma forÁa constante de $1\,\mathrm{N}$ È aplicada no instante $t=1\,\mathrm{s}$ e retirada no instante $t=3\,\mathrm{s}$.
+O deslocamento $x(t)$ em relaÁ„o ao equilÌbrio È descrito por
 \[
 x''(t)+2x'(t)+5x(t)=u(t-1)-u(t-3),
 \qquad x(0)=0,\quad x'(0)=0.
@@ -361,9 +367,9 @@ Usando a transformada de Laplace, responda:
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Quest√£o 3} (2.5 pontos)
-Um oscilador n√£o amortecido, de massa unit√°ria e inicialmente em repouso na posi√ß√£o de equil√≠brio, recebe um impacto instant√¢neo de impulso $2$ no instante $t=1$.
-Seu movimento √© modelado por
+\noindent $\bullet$ {\bf Quest„o 3} (2.5 pontos)
+Um oscilador n„o amortecido, de massa unit·ria e inicialmente em repouso na posiÁ„o de equilÌbrio, recebe um impacto instant‚neo de impulso $2$ no instante $t=1$.
+Seu movimento È modelado por
 \[
 y''(t)+4y(t)=2\delta(t-1),
 \qquad y(0)=0,\quad y'(0)=0.
@@ -372,11 +378,11 @@ Usando a transformada de Laplace, responda:
 \begin{itemize}
 \item[a)] (1.0 ponto) Determine $Y(s)=\mathcal{L}\{y(t)\}$.
 \item[b)] (1.0 ponto) Encontre $y(t)$.
-\item[c)] (0.5 ponto) Determine o salto da velocidade no instante do impacto, isto √©, $y'(1^+)-y'(1^-)$.
+\item[c)] (0.5 ponto) Determine o salto da velocidade no instante do impacto, isto È, $y'(1^+)-y'(1^-)$.
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Quest√£o 4} (2.0 pontos)
+\noindent $\bullet$ {\bf Quest„o 4} (2.0 pontos)
 Considere o sinal
 \[
 f(t)=\begin{cases}
@@ -386,12 +392,12 @@ t,&0\leq t<2,\\
 \end{cases}
 \]
 \begin{itemize}
-\item[a)] (1.0 ponto) Escreva $f(t)$ usando fun√ß√µes degrau unit√°rio.
+\item[a)] (1.0 ponto) Escreva $f(t)$ usando funÁıes degrau unit·rio.
 \item[b)] (1.0 ponto) Calcule $F(s)=\mathcal{L}\{f(t)\}$.
 \end{itemize}
 
 \newpage
-\noindent {\bf Gabarito -- Quest√£o 1}
+\noindent {\bf Gabarito -- Quest„o 1}
 \begin{itemize}
 \item[a)] Aplicando a transformada de Laplace:
 \[
@@ -406,7 +412,7 @@ Portanto,
 \[
 \widehat T(s)=\frac{180}{s}-\frac{160(s+4)}{s^2+4s+\eta}.
 \]
-\item[b)] O polin√¥mio caracter√≠stico √© $r^2+4r+\eta$. Para uma raiz dupla real, $16-4\eta=0$, logo $\eta=4$.
+\item[b)] O polinÙmio caracterÌstico È $r^2+4r+\eta$. Para uma raiz dupla real, $16-4\eta=0$, logo $\eta=4$.
 \item[c)] Para $\eta=4$,
 \[
 \widehat T(s)=\frac{180}{s}-\frac{160}{s+2}-\frac{320}{(s+2)^2}.
@@ -416,17 +422,17 @@ Assim,
 \boxed{T(t)=180-160(1+2t)e^{-2t}.}
 \]
 \item[d)] A temperatura converge para $180\,{}^\circ\mathrm{C}$.
-Pela equa√ß√£o t√©rmica,
+Pela equaÁ„o tÈrmica,
 \[
 q(t)=T'(t)+4(T(t)-20)=640-640(1+t)e^{-2t},
 \]
-de modo que $\lim_{t\to\infty}q(t)=640$. A pot√™ncia final compensa as perdas de calor para o ambiente, que permanece a $20\,{}^\circ\mathrm{C}$.
+de modo que $\lim_{t\to\infty}q(t)=640$. A potÍncia final compensa as perdas de calor para o ambiente, que permanece a $20\,{}^\circ\mathrm{C}$.
 \end{itemize}
 
 \newpage
-\noindent {\bf Gabarito -- Quest√£o 2}
+\noindent {\bf Gabarito -- Quest„o 2}
 \begin{itemize}
-\item[a)] Como as condi√ß√µes iniciais s√£o nulas,
+\item[a)] Como as condiÁıes iniciais s„o nulas,
 \[
 (s^2+2s+5)X(s)=\frac{e^{-s}-e^{-3s}}{s},
 \qquad
@@ -448,7 +454,7 @@ Pela propriedade de deslocamento no eixo $t$,
 \end{itemize}
 
 \newpage
-\noindent {\bf Gabarito -- Quest√£o 3}
+\noindent {\bf Gabarito -- Quest„o 3}
 \begin{itemize}
 \item[a)] Aplicando a transformada de Laplace:
 \[
@@ -459,19 +465,19 @@ Pela propriedade de deslocamento no eixo $t$,
 \[
 \boxed{y(t)=u(t-1)\sin\bigl(2(t-1)\bigr).}
 \]
-\item[c)] Antes do impacto, $y'(1^-)=0$. Ap√≥s o impacto,
+\item[c)] Antes do impacto, $y'(1^-)=0$. ApÛs o impacto,
 $y'(t)=2\cos(2(t-1))$ para $t>1$, logo $y'(1^+)=2$.
 Portanto,
 \[
 \boxed{y'(1^+)-y'(1^-)=2.}
 \]
-Esse salto tamb√©m resulta da integra√ß√£o da equa√ß√£o diferencial em torno de $t=1$.
+Esse salto tambÈm resulta da integraÁ„o da equaÁ„o diferencial em torno de $t=1$.
 \end{itemize}
 
 \newpage
-\noindent {\bf Gabarito -- Quest√£o 4}
+\noindent {\bf Gabarito -- Quest„o 4}
 \begin{itemize}
-\item[a)] Uma representa√ß√£o √©
+\item[a)] Uma representaÁ„o È
 \[
 \boxed{f(t)=t\,u(t)-2(t-2)u(t-2)+(t-4)u(t-4).}
 \]
