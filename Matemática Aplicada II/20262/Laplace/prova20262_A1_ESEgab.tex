@@ -352,19 +352,14 @@ Usando a transformada de Laplace, responda:
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Questão 2} (2.5 pontos)
-Um oscilador harmônico amortecido consiste em uma massa de $1\,\mathrm{kg}$ presa a uma mola de constante elástica $5\,\mathrm{N/m}$, com coeficiente de amortecimento $2\,\mathrm{N\,s/m}$.
-A massa está inicialmente em repouso na posição de equilíbrio. Uma força constante de $1\,\mathrm{N}$ é aplicada no instante $t=1\,\mathrm{s}$ e retirada no instante $t=3\,\mathrm{s}$.
-O deslocamento $x(t)$ em relação ao equilíbrio é descrito por
+\noindent $\bullet$ {\bf Questão 2} (2.0 pontos)
+Usando a tabela de transformadas e as propriedades da transformada de Laplace, determine
 \[
-x''(t)+2x'(t)+5x(t)=u(t-1)-u(t-3),
-\qquad x(0)=0,\quad x'(0)=0.
+\mathcal{L}^{-1}\left\{
+\frac{e^{-2s}(s+5)}{\bigl((s+1)^2+4\bigr)^2}
+\right\}.
 \]
-Usando a transformada de Laplace, responda:
-\begin{itemize}
-\item[a)] (1.0 ponto) Determine $X(s)=\mathcal{L}\{x(t)\}$.
-\item[b)] (1.5 ponto) Encontre $x(t)$.
-\end{itemize}
+Indique os itens da tabela e as propriedades utilizados e apresente os passos da resolução.
 
 \newpage
 \noindent $\bullet$ {\bf Questão 3} (2.5 pontos)
@@ -382,8 +377,8 @@ Usando a transformada de Laplace, responda:
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Questão 4} (2.0 pontos)
-Considere o sinal
+\noindent $\bullet$ {\bf Questão 4} (2.5 pontos)
+Considere a função
 \[
 f(t)=\begin{cases}
 t,&0\leq t<2,\\
@@ -391,9 +386,11 @@ t,&0\leq t<2,\\
 0,&t\geq4.
 \end{cases}
 \]
+Considere as derivadas em $t>0$, no sentido das distribuições, incluindo os impulsos de Dirac nos pontos de salto.
 \begin{itemize}
-\item[a)] (1.0 ponto) Escreva $f(t)$ usando funções degrau unitário.
-\item[b)] (1.0 ponto) Calcule $F(s)=\mathcal{L}\{f(t)\}$.
+\item[a)] (1.0 ponto) Escreva $f(t)$, $f'(t)$ e $f''(t)$ em termos de funções de Heaviside e deltas de Dirac, conforme necessário.
+\item[b)] (1.0 ponto) Calcule $\mathcal{L}\{f(t)\}$, $\mathcal{L}\{f'(t)\}$ e $\mathcal{L}\{f''(t)\}$. Justifique a relação entre as três transformadas usando os valores iniciais.
+\item[c)] (0.5 ponto) Esboce os gráficos de $f$, $f'$ e $f''$ para $t>0$. Represente os impulsos por setas, indicando suas posições e seus pesos.
 \end{itemize}
 
 \newpage
@@ -431,27 +428,25 @@ de modo que $\lim_{t\to\infty}q(t)=640$. A potência final compensa as perdas de 
 
 \newpage
 \noindent {\bf Gabarito -- Questão 2}
-\begin{itemize}
-\item[a)] Como as condições iniciais são nulas,
+Pela linearidade (propriedade 1), escrevemos $s+5=(s+1)+4$.
+Os itens 22 e 21 da tabela, com $w=2$, fornecem
 \[
-(s^2+2s+5)X(s)=\frac{e^{-s}-e^{-3s}}{s},
-\qquad
-\boxed{X(s)=\frac{e^{-s}-e^{-3s}}{s((s+1)^2+4)}.}
+\mathcal{L}^{-1}\left\{\frac{s}{(s^2+4)^2}\right\}
+=\frac{t}{4}\sin(2t),\qquad
+\mathcal{L}^{-1}\left\{\frac{4}{(s^2+4)^2}\right\}
+=\frac14\bigl(\sin(2t)-2t\cos(2t)\bigr).
 \]
-\item[b)] Escrevendo
+Pelo deslocamento no eixo $s$ (propriedade 3), definimos
 \[
-\frac{1}{s((s+1)^2+4)}
-=\frac{1}{5s}-\frac{s+1}{5((s+1)^2+4)}-\frac{1}{5((s+1)^2+4)},
+g(t)=\frac{e^{-t}}4
+\bigl[(t+1)\sin(2t)-2t\cos(2t)\bigr].
 \]
-definimos
+Finalmente, pelo deslocamento no eixo $t$ (propriedade 4),
 \[
-g(t)=\frac15\left[1-e^{-t}\left(\cos(2t)+\frac12\sin(2t)\right)\right].
+\boxed{\mathcal{L}^{-1}\left\{
+\frac{e^{-2s}(s+5)}{\bigl((s+1)^2+4\bigr)^2}
+\right\}=u(t-2)g(t-2).}
 \]
-Pela propriedade de deslocamento no eixo $t$,
-\[
-\boxed{x(t)=u(t-1)g(t-1)-u(t-3)g(t-3).}
-\]
-\end{itemize}
 
 \newpage
 \noindent {\bf Gabarito -- Questão 3}
@@ -477,14 +472,39 @@ Esse salto também resulta da integração da equação diferencial em torno de $t=1$
 \newpage
 \noindent {\bf Gabarito -- Questão 4}
 \begin{itemize}
-\item[a)] Uma representação é
+\item[a)] Para $t>0$,
 \[
-\boxed{f(t)=t\,u(t)-2(t-2)u(t-2)+(t-4)u(t-4).}
+\boxed{f(t)=t-2(t-2)u(t-2)+(t-4)u(t-4),}
 \]
-\item[b)] Aplicando linearidade e deslocamento no eixo $t$,
 \[
-\boxed{F(s)=\frac{1-2e^{-2s}+e^{-4s}}{s^2}
-=\frac{(1-e^{-2s})^2}{s^2}.}
+\boxed{f'(t)=1-2u(t-2)+u(t-4),}
+\qquad
+\boxed{f''(t)=-2\delta(t-2)+\delta(t-4).}
 \]
+A função $f$ é contínua, portanto sua primeira derivada não contém impulsos.
+Os saltos de $f'$ em $t=2$ e $t=4$ são, respectivamente, $-2$ e $1$.
+\item[b)] Por linearidade e deslocamento,
+\[
+\boxed{\mathcal{L}\{f(t)\}
+=\frac{1-2e^{-2s}+e^{-4s}}{s^2},}
+\]
+\[
+\boxed{\mathcal{L}\{f'(t)\}
+=\frac{1-2e^{-2s}+e^{-4s}}{s},}
+\qquad
+\boxed{\mathcal{L}\{f''(t)\}=-2e^{-2s}+e^{-4s}.}
+\]
+Como $f(0^+)=0$ e $f'(0^+)=1$, a propriedade 2 fornece
+\[
+\mathcal{L}\{f'\}=s\mathcal{L}\{f\},\qquad
+\mathcal{L}\{f''\}=s^2\mathcal{L}\{f\}-1.
+\]
+As derivadas foram consideradas em $t>0$, sem derivar uma extensão por zero para $t<0$.
+\item[c)] O gráfico de $f$ é formado pelos segmentos de reta que ligam
+$(0,0)$ a $(2,2)$ e $(2,2)$ a $(4,0)$, seguido do eixo horizontal.
+O gráfico de $f'$ tem altura $1$ em $0<t<2$, altura $-1$ em $2<t<4$ e altura $0$ em $t>4$.
+A representação de $f''$ contém um impulso de peso $-2$ em $t=2$ (seta para baixo)
+e um impulso de peso $1$ em $t=4$ (seta para cima), sendo nula fora desses pontos.
+As setas indicam os pesos dos impulsos, e não valores pontuais da distribuição.
 \end{itemize}
 \end{document}
