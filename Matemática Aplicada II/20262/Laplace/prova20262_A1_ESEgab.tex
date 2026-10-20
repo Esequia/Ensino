@@ -352,14 +352,14 @@ Usando a transformada de Laplace, responda:
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Questão 2} (2.0 pontos)
-Usando a tabela de transformadas e as propriedades da transformada de Laplace, determine
-\[
-\mathcal{L}^{-1}\left\{
-\frac{e^{-2s}(s+5)}{\bigl((s+1)^2+4\bigr)^2}
-\right\}.
-\]
-Indique os itens da tabela e as propriedades utilizados e apresente os passos da resolução.
+\noindent $\bullet$ {\bf Questão 2} (2.5 pontos)
+Usando a tabela de transformadas e as propriedades da transformada de Laplace, calcule as transformadas inversas abaixo.
+Indique os itens da tabela e as propriedades utilizados.
+\begin{itemize}
+\item[a)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{s}{s^2+2s+10}\right\}$.
+\item[b)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{s^2+2s+10}\right\}$.
+\item[c)] (1.0 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{(s^2+2s+10)(1-e^{-s})}\right\}$.
+\end{itemize}
 
 \newpage
 \noindent $\bullet$ {\bf Questão 3} (2.5 pontos)
@@ -377,7 +377,7 @@ Usando a transformada de Laplace, responda:
 \end{itemize}
 
 \newpage
-\noindent $\bullet$ {\bf Questão 4} (2.5 pontos)
+\noindent $\bullet$ {\bf Questão 4} (2.0 pontos)
 Considere a função
 \[
 f(t)=\begin{cases}
@@ -388,9 +388,9 @@ t,&0\leq t<2,\\
 \]
 Considere as derivadas em $t>0$, no sentido das distribuições, incluindo os impulsos de Dirac nos pontos de salto.
 \begin{itemize}
-\item[a)] (1.0 ponto) Escreva $f(t)$, $f'(t)$ e $f''(t)$ em termos de funções de Heaviside e deltas de Dirac, conforme necessário.
-\item[b)] (1.0 ponto) Calcule $\mathcal{L}\{f(t)\}$, $\mathcal{L}\{f'(t)\}$ e $\mathcal{L}\{f''(t)\}$. Justifique a relação entre as três transformadas usando os valores iniciais.
-\item[c)] (0.5 ponto) Esboce os gráficos de $f$, $f'$ e $f''$ para $t>0$. Represente os impulsos por setas, indicando suas posições e seus pesos.
+\item[a)] (0.75 ponto) Escreva $f(t)$, $f'(t)$ e $f''(t)$ em termos de funções de Heaviside e deltas de Dirac, conforme necessário.
+\item[b)] (0.5 ponto) Esboce os gráficos de $f$, $f'$ e $f''$ para $t>0$. Represente os impulsos por setas, indicando suas posições e seus pesos.
+\item[c)] (0.75 ponto) Calcule $\mathcal{L}\{f(t)\}$, $\mathcal{L}\{f'(t)\}$ e $\mathcal{L}\{f''(t)\}$. Justifique a relação entre as três transformadas usando os valores iniciais.
 \end{itemize}
 
 \newpage
@@ -428,25 +428,38 @@ de modo que $\lim_{t\to\infty}q(t)=640$. A potência final compensa as perdas de 
 
 \newpage
 \noindent {\bf Gabarito -- Questão 2}
-Pela linearidade (propriedade 1), escrevemos $s+5=(s+1)+4$.
-Os itens 22 e 21 da tabela, com $w=2$, fornecem
+\begin{itemize}
+\item[a)] Completando o quadrado e decompondo o numerador,
 \[
-\mathcal{L}^{-1}\left\{\frac{s}{(s^2+4)^2}\right\}
-=\frac{t}{4}\sin(2t),\qquad
-\mathcal{L}^{-1}\left\{\frac{4}{(s^2+4)^2}\right\}
-=\frac14\bigl(\sin(2t)-2t\cos(2t)\bigr).
+\frac{s}{s^2+2s+10}
+=\frac{s+1}{(s+1)^2+9}-\frac{1}{(s+1)^2+9}.
 \]
-Pelo deslocamento no eixo $s$ (propriedade 3), definimos
+Pelos itens 18 e 17 da tabela (ou pelos itens 14 e 13, seguidos da propriedade 3),
 \[
-g(t)=\frac{e^{-t}}4
-\bigl[(t+1)\sin(2t)-2t\cos(2t)\bigr].
+\boxed{g(t)=e^{-t}\left(\cos(3t)-\frac13\sin(3t)\right).}
 \]
-Finalmente, pelo deslocamento no eixo $t$ (propriedade 4),
+Usamos também a linearidade (propriedade 1).
+\item[b)] Pelo deslocamento no eixo $t$ (propriedade 4),
 \[
-\boxed{\mathcal{L}^{-1}\left\{
-\frac{e^{-2s}(s+5)}{\bigl((s+1)^2+4\bigr)^2}
-\right\}=u(t-2)g(t-2).}
+\boxed{u(t-1)g(t-1)
+=u(t-1)e^{-(t-1)}
+\left[\cos(3(t-1))-\frac13\sin(3(t-1))\right].}
 \]
+\item[c)] Para $\operatorname{Re}(s)>0$, a série geométrica fornece
+\[
+\frac{e^{-s}}{1-e^{-s}}=\sum_{n=1}^{\infty}e^{-ns}.
+\]
+Portanto, pela linearidade e pelo deslocamento no eixo $t$,
+\[
+\boxed{\sum_{n=1}^{\infty}u(t-n)g(t-n)}
+\]
+é a transformada inversa pedida, isto é,
+\[
+\boxed{\sum_{n=1}^{\infty}u(t-n)e^{-(t-n)}
+\left[\cos(3(t-n))-\frac13\sin(3(t-n))\right].}
+\]
+Em cada intervalo limitado de tempo, apenas um número finito de parcelas é não nulo.
+\end{itemize}
 
 \newpage
 \noindent {\bf Gabarito -- Questão 3}
@@ -483,7 +496,13 @@ Esse salto também resulta da integração da equação diferencial em torno de $t=1$
 \]
 A função $f$ é contínua, portanto sua primeira derivada não contém impulsos.
 Os saltos de $f'$ em $t=2$ e $t=4$ são, respectivamente, $-2$ e $1$.
-\item[b)] Por linearidade e deslocamento,
+\item[b)] O gráfico de $f$ é formado pelos segmentos de reta que ligam
+$(0,0)$ a $(2,2)$ e $(2,2)$ a $(4,0)$, seguido do eixo horizontal.
+O gráfico de $f'$ tem altura $1$ em $0<t<2$, altura $-1$ em $2<t<4$ e altura $0$ em $t>4$.
+A representação de $f''$ contém um impulso de peso $-2$ em $t=2$ (seta para baixo)
+e um impulso de peso $1$ em $t=4$ (seta para cima), sendo nula fora desses pontos.
+As setas indicam os pesos dos impulsos, e não valores pontuais da distribuição.
+\item[c)] Por linearidade e deslocamento,
 \[
 \boxed{\mathcal{L}\{f(t)\}
 =\frac{1-2e^{-2s}+e^{-4s}}{s^2},}
@@ -500,11 +519,5 @@ Como $f(0^+)=0$ e $f'(0^+)=1$, a propriedade 2 fornece
 \mathcal{L}\{f''\}=s^2\mathcal{L}\{f\}-1.
 \]
 As derivadas foram consideradas em $t>0$, sem derivar uma extensão por zero para $t<0$.
-\item[c)] O gráfico de $f$ é formado pelos segmentos de reta que ligam
-$(0,0)$ a $(2,2)$ e $(2,2)$ a $(4,0)$, seguido do eixo horizontal.
-O gráfico de $f'$ tem altura $1$ em $0<t<2$, altura $-1$ em $2<t<4$ e altura $0$ em $t>4$.
-A representação de $f''$ contém um impulso de peso $-2$ em $t=2$ (seta para baixo)
-e um impulso de peso $1$ em $t=4$ (seta para cima), sendo nula fora desses pontos.
-As setas indicam os pesos dos impulsos, e não valores pontuais da distribuição.
 \end{itemize}
 \end{document}
