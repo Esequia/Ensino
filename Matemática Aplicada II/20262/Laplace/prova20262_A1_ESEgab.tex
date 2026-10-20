@@ -84,7 +84,7 @@ Identidades:
 \hline
  $\sinh(x)=\frac{e^{x}-e^{-x}}{2}$ & $\cosh(x)=\frac{e^{x}+e^{-x}}{2}$\\ 
 \hline
-\multicolumn{2}{|c|}{$(a+b)^n=\sum_{j=0}^\infty { n\choose j} a^{n-j}b^j, \quad {n\choose j}=\frac{n!}{j!(n-j)!}$}\\ 
+\multicolumn{2}{|c|}{$(a+b)^n=\sum_{j=0}^n { n\choose j} a^{n-j}b^j, \quad {n\choose j}=\frac{n!}{j!(n-j)!}$}\\ 
 \hline
  \multicolumn{2}{|c|}{$\sin(x+y)=\sin(x)\cos(y)+\sin(y)\cos(x)$}\\
  \hline
@@ -192,8 +192,8 @@ $\int xe^{\lambda x}\; \mathrm{d}x = \frac{e^{ \lambda x}}{\lambda^2}(\lambda x-
  $\int \!x\sin \left( \lambda\,x \right) {dx}={\frac {\sin \left( 
 \lambda\,x \right) -\lambda x\cos \left( \lambda\,x \right) }{{\lambda}
 ^{2}}}+C$\\\hline
- $\int \!e^{\lambda x}\sin \left( w\,x \right) {dx}={\frac {{{\rm e}^{\lambda\,x}} \left( \lambda\,\cos \left( wx \right) 
-+w\sin \left( wx \right)  \right) }{{\lambda}^{2}+{w}^{2}}}
+ $\int \!e^{\lambda x}\sin \left( w\,x \right) {dx}={\frac {{{\rm e}^{\lambda\,x}} \left( \lambda\,\sin \left( wx \right) 
+-w\cos \left( wx \right)  \right) }{{\lambda}^{2}+{w}^{2}}}+C
 $
  \\\hline
 \end{tabu}}
@@ -263,7 +263,7 @@ Tabela de transformadas de Laplace:
 \hline
 25& $\displaystyle \frac{1}{(s^4+4a^4)}$&\begin{tabu}{r}$\displaystyle  \frac{1}{4a^3}[\sin(at)\cosh(at)-$\\$\displaystyle  -\cos(at)\sinh(at)]$\end{tabu} \\ 
 \hline
-26& $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sin(at)\sinh(at))$ \\ 
+26& $\displaystyle \frac{s}{(s^4+4a^4)} $&$\displaystyle  \frac{1}{2a^2}\sin(at)\sinh(at)$ \\ 
 \hline
 27& $\displaystyle \frac{1}{(s^4-a^4)} $&$\displaystyle  \frac{1}{2a^3}(\sinh(at)-\sin(at))$ \\ 
 \hline
@@ -297,7 +297,7 @@ Tabela de transformadas de Laplace:
 \hline
 35& $\displaystyle \frac{1}{\sqrt{s}}e^{-\frac{k}{s}} $&$\displaystyle  \frac{1}{\sqrt{\pi t}}\cos(2\sqrt{k t})$ \\ 
 \hline
-36& $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\sinh(2\sqrt{k t})$ \\ 
+36& $\displaystyle \frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}},\quad (k>0)\frac{1}{s^{\frac{3}{2}}}e^{\frac{k}{s}}$&$\displaystyle  \frac{1}{\sqrt{\pi t}}\sinh(2\sqrt{k t})$\displaystyle  \frac{1}{\sqrt{\pi k}}\sinh(2\sqrt{k t})$ \\ 
 \hline
 37& $\displaystyle e^{-k\sqrt{s}},\qquad (k>0) $&$\displaystyle  \frac{k}{2\sqrt{\pi t^3}}e^{-\frac{k^2}{4t}}$ \\ 
 \hline
