@@ -351,49 +351,6 @@ Usando a transformada de Laplace, responda:
 \item[d)] (0.5 ponto) Determine $\lim_{t\to\infty}T(t)$ e $\lim_{t\to\infty}q(t)$. Explique por que a potência não tende a zero quando a temperatura se aproxima do valor de ajuste.
 \end{itemize}
 
-\newpage
-\noindent $\bullet$ {\bf Questão 2} (2.5 pontos)
-Usando a tabela de transformadas e as propriedades da transformada de Laplace, calcule as transformadas inversas abaixo.
-Indique os itens da tabela e as propriedades utilizados.
-\begin{itemize}
-\item[a)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{s}{s^2+2s+10}\right\}$.
-\item[b)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{s^2+2s+10}\right\}$.
-\item[c)] (1.0 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{(s^2+2s+10)(1-e^{-s})}\right\}$.
-\end{itemize}
-
-\newpage
-\noindent $\bullet$ {\bf Questão 3} (2.5 pontos)
-Um oscilador não amortecido, de massa unitária e inicialmente em repouso na posição de equilíbrio, recebe um impacto instantâneo de impulso $2$ no instante $t=1$.
-Seu movimento é modelado por
-\[
-y''(t)+4y(t)=2\delta(t-1),
-\qquad y(0)=0,\quad y'(0)=0.
-\]
-Usando a transformada de Laplace, responda:
-\begin{itemize}
-\item[a)] (1.0 ponto) Determine $Y(s)=\mathcal{L}\{y(t)\}$.
-\item[b)] (1.0 ponto) Encontre $y(t)$.
-\item[c)] (0.5 ponto) Determine o salto da velocidade no instante do impacto, isto é, $y'(1^+)-y'(1^-)$.
-\end{itemize}
-
-\newpage
-\noindent $\bullet$ {\bf Questão 4} (2.0 pontos)
-Considere a função
-\[
-f(t)=\begin{cases}
-t,&0\leq t<2,\\
-4-t,&2\leq t<4,\\
-0,&t\geq4.
-\end{cases}
-\]
-Considere as derivadas em $t>0$, no sentido das distribuições, incluindo os impulsos de Dirac nos pontos de salto.
-\begin{itemize}
-\item[a)] (0.75 ponto) Escreva $f(t)$, $f'(t)$ e $f''(t)$ em termos de funções de Heaviside e deltas de Dirac, conforme necessário.
-\item[b)] (0.5 ponto) Esboce os gráficos de $f$, $f'$ e $f''$ para $t>0$. Represente os impulsos por setas, indicando suas posições e seus pesos.
-\item[c)] (0.75 ponto) Calcule $\mathcal{L}\{f(t)\}$, $\mathcal{L}\{f'(t)\}$ e $\mathcal{L}\{f''(t)\}$. Justifique a relação entre as três transformadas usando os valores iniciais.
-\end{itemize}
-
-\newpage
 \noindent {\bf Gabarito -- Questão 1}
 \begin{itemize}
 \item[a)] Aplicando a transformada de Laplace:
@@ -427,6 +384,15 @@ de modo que $\lim_{t\to\infty}q(t)=640$. A potência final compensa as perdas de 
 \end{itemize}
 
 \newpage
+\noindent $\bullet$ {\bf Questão 2} (2.5 pontos)
+Usando a tabela de transformadas e as propriedades da transformada de Laplace, calcule as transformadas inversas abaixo.
+Indique os itens da tabela e as propriedades utilizados.
+\begin{itemize}
+\item[a)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{s}{s^2+2s+10}\right\}$.
+\item[b)] (0.75 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{s^2+2s+10}\right\}$.
+\item[c)] (1.0 ponto) $\displaystyle \mathcal{L}^{-1}\left\{\frac{se^{-s}}{(s^2+2s+10)(1-e^{-s})}\right\}$.
+\end{itemize}
+
 \noindent {\bf Gabarito -- Questão 2}
 \begin{itemize}
 \item[a)] Completando o quadrado e decompondo o numerador,
@@ -462,6 +428,20 @@ Em cada intervalo limitado de tempo, apenas um número finito de parcelas é não n
 \end{itemize}
 
 \newpage
+\noindent $\bullet$ {\bf Questão 3} (2.5 pontos)
+Um oscilador não amortecido, de massa unitária e inicialmente em repouso na posição de equilíbrio, recebe um impacto instantâneo de impulso $2$ no instante $t=1$.
+Seu movimento é modelado por
+\[
+y''(t)+4y(t)=2\delta(t-1),
+\qquad y(0)=0,\quad y'(0)=0.
+\]
+Usando a transformada de Laplace, responda:
+\begin{itemize}
+\item[a)] (1.0 ponto) Determine $Y(s)=\mathcal{L}\{y(t)\}$.
+\item[b)] (1.0 ponto) Encontre $y(t)$.
+\item[c)] (0.5 ponto) Determine o salto da velocidade no instante do impacto, isto é, $y'(1^+)-y'(1^-)$.
+\end{itemize}
+
 \noindent {\bf Gabarito -- Questão 3}
 \begin{itemize}
 \item[a)] Aplicando a transformada de Laplace:
@@ -483,6 +463,22 @@ Esse salto também resulta da integração da equação diferencial em torno de $t=1$
 \end{itemize}
 
 \newpage
+\noindent $\bullet$ {\bf Questão 4} (2.0 pontos)
+Considere a função
+\[
+f(t)=\begin{cases}
+t,&0\leq t<2,\\
+4-t,&2\leq t<4,\\
+0,&t\geq4.
+\end{cases}
+\]
+Considere as derivadas em $t>0$, no sentido das distribuições, incluindo os impulsos de Dirac nos pontos de salto.
+\begin{itemize}
+\item[a)] (0.75 ponto) Escreva $f(t)$, $f'(t)$ e $f''(t)$ em termos de funções de Heaviside e deltas de Dirac, conforme necessário.
+\item[b)] (0.5 ponto) Esboce os gráficos de $f$, $f'$ e $f''$ para $t>0$. Represente os impulsos por setas, indicando suas posições e seus pesos.
+\item[c)] (0.75 ponto) Calcule $\mathcal{L}\{f(t)\}$, $\mathcal{L}\{f'(t)\}$ e $\mathcal{L}\{f''(t)\}$. Justifique a relação entre as três transformadas usando os valores iniciais.
+\end{itemize}
+
 \noindent {\bf Gabarito -- Questão 4}
 \begin{itemize}
 \item[a)] Para $t>0$,
@@ -520,4 +516,5 @@ Como $f(0^+)=0$ e $f'(0^+)=1$, a propriedade 2 fornece
 \]
 As derivadas foram consideradas em $t>0$, sem derivar uma extensão por zero para $t<0$.
 \end{itemize}
+
 \end{document}
